@@ -1,10 +1,4 @@
 <?php
-/**
- * @author Amin Mahmoudi (MasterkinG)
- * @copyright    Copyright (c) 2019 - 2021, MasterkinG32 Team, Inc. (https://masterking32.com)
- * @link    https://masterking32.com
- * @Description : It's not masterking32 framework !
- **/
 
 if (version_compare(PHP_VERSION, '7.0', '<')) {
     echo "<p>You need to use PHP >= 7.0.0</p>";
@@ -29,8 +23,3 @@ if (version_compare(PHP_VERSION, '7.0', '<')) {
     echo "<p><a href='https://www.liquidweb.com/kb/installing-additional-php-versions-using-easyapache-4/' target='_blank'>CPanel EasyApache4 install PHP 7</a></p>";
     exit();
 }
-
-require_once './application/loader.php';
-user::post_handler();
-vote::post_handler();
-require_once base_path . 'template/' . get_config('template') . '/tpl/main.php';

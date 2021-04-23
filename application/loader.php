@@ -15,7 +15,6 @@ session_start();
 define('base_path', str_replace('application/loader.php', '', str_replace("\\", '/', __FILE__)));
 define('app_path', str_replace('application/loader.php', '', str_replace("\\", '/', __FILE__)) . 'application/');
 require_once app_path . 'vendor/autoload.php';
-require_once app_path . 'config/config.php';
 require_once app_path . 'include/core_handler.php';
 require_once app_path . 'include/functions.php';
 
