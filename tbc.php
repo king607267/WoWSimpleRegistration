@@ -6,5 +6,5 @@
  * @Description : It's not masterking32 framework !
  **/
 require_once "./check.php";
-require_once './application/config/config70.php';
+require_once './application/config/config_tbc.php';
 require_once "./handler.php";
