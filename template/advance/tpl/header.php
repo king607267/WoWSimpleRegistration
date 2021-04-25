@@ -14,7 +14,7 @@
     <title><?php echo $antiXss->xss_clean(get_config("page_title")); ?></title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
-    <link href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/favicon.ICO" rel="icon">
+    <link href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/images/favicon.ico" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
           rel="stylesheet">
     <link href="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/assets/vendor/bootstrap/css/bootstrap.min.css"
