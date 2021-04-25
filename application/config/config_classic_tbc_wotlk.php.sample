@@ -1,6 +1,16 @@
 <?php
 require_once 'config_common.php';
 /*===================================================================
+Your server logo images.
+classic
+    classic-logo.png
+tbc
+    tbc-logo.png
+wotlk
+    wotlk-logo.png
+=====================================================================*/
+$config['logo'] = 'wotlk-logo.png';
+/*===================================================================
 Your server information.
 realmlist
     Server Realmlist

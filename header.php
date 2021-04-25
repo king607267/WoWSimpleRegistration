@@ -15,8 +15,8 @@
     <meta name="generator" content="MasterkinG32.CoM"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="description" content="Index">
-    <meta name="description" content="select core">
-    <title>select core</title>
+    <meta name="description" content="WJMWoW">
+    <title>WJMWoW</title>
     <link rel="stylesheet"
           href="./css/bootstrap.min.css">
     <link rel="stylesheet"
