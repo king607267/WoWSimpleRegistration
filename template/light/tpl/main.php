@@ -8,7 +8,7 @@
 require_once 'header.php'; ?>
 <div class="row">
     <div class="main-box">
-        <img src="<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>/template/<?php echo $antiXss->xss_clean(get_config("template")); ?>/images/<?php echo $antiXss->xss_clean(get_config("logo")); ?>">
+<!--        <img src="--><?php //echo $antiXss->xss_clean(get_config("baseurl")); ?><!--/template/--><?php //echo $antiXss->xss_clean(get_config("template")); ?><!--/images/--><?php //echo $antiXss->xss_clean(get_config("logo")); ?><!--">-->
         <div class="col-xs-12" style="margin-top: 20px;">
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">

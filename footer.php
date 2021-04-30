@@ -9,7 +9,7 @@
 ?>
 </div>
 <footer class="text-center">
-    Developed by <a href="http://masterking32.com">MasterkinG32.CoM</a>
+    <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=TuCwkQcKkc4Pz57ii60Fma91Lwvsht77&jump_from=webapi">魔兽闲聊学习讨论群 745274862</a>
 </footer>
 </body>
 </html>
