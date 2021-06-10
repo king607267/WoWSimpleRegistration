@@ -12,6 +12,8 @@ require_once 'header.php'; ?>
         <div class="col-xs-12" style="margin-top: 20px;">
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" onclick="location.href='<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>'"
+                       role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('home'); ?></a>
                     <a class="nav-item nav-link active" id="nav-register-tab" data-toggle="tab" href="#nav-register"
                        role="tab" aria-controls="nav-register" aria-selected="true"><?php elang('register'); ?></a>
                     <?php if (!get_config('disable_online_players')) { ?>
@@ -30,8 +32,6 @@ require_once 'header.php'; ?>
                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" data-target="#lang-modal"
                        role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('change_lang_head'); ?></a>
                     <?php } ?>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" onclick="location.href='<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>'"
-                       role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('home'); ?></a>
                 </div>
             </nav>
             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
