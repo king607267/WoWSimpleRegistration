@@ -30,6 +30,8 @@ require_once 'header.php'; ?>
                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" data-target="#lang-modal"
                        role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('change_lang_head'); ?></a>
                     <?php } ?>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" onclick="location.href='<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>'"
+                       role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('home'); ?></a>
                 </div>
             </nav>
             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">

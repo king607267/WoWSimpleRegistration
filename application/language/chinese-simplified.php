@@ -49,6 +49,7 @@ $language['setup_game'] = '安装游戏';
 $language['create_account_tip3'] = '打开"魔兽世界"目录。默认目录是"C:\Program Files\World of Warcraft"。进入目录后，打开名为"data"的目录，然后进入名为zhCN或enGB或enUS的目录（取决于你的客户端语言）。';
 $language['change_server_address'] = '修改服务器地址';
 $language['create_account_tip4'] = '清空文本并更改为:';
+$language['create_account_tip5'] = '客户端下载地址:'.get_config ('pan_baidu_url').'提取码:'.get_config ('pan_baidu_pwd');
 $language['server_rules'] = '服务器规则';
 $language['read_before_register'] = '注册必读';
 $language['read_our_rules'] = '请务必阅读服务器规则';

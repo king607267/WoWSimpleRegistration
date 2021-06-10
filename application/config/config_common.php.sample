@@ -183,3 +183,8 @@ $config['2fa_support'] = false;
 $config['soap_2d_command'] = 'account set 2fa {USERNAME} off';
 $config['soap_2e_command'] = 'account set 2fa {USERNAME} {SECRET}';
 $config['script_version'] = '2.0.2';
+/*===================================================================
+baidu net disk url and password
+=====================================================================*/
+$config['pan_baidu_url'] = '';
+$config['pan_baidu_pwd'] = '';
