@@ -94,12 +94,15 @@ db_auth_pass
     Auth Database Password
 db_auth_dbname
     Auth Database DBName
+realm_port
+    Realm Port
 =====================================================================*/
 $config['db_auth_host'] = '127.0.0.1';
 $config['db_auth_port'] = '3306';
 $config['db_auth_user'] = 'root';
 $config['db_auth_pass'] = 'root';
 $config['db_auth_dbname'] = 'realmd';
+$config['realm_port'] = '3724';
 /*===================================================================
 Your character's databases.
 If your server has a lot of realms you can check the example at the bottom of the file.

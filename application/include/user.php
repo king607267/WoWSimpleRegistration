@@ -645,6 +645,29 @@ class user
     }
 
     public
+    static function get_server_status($host, $port)
+    {
+        $errno = 0;
+        $errstr = '';
+        $tval = 5;
+        $sock = fsockopen(
+            $host, //server Host
+            $port, //Port #
+            $errno, //Error Number
+            $errstr, //Error Message
+            $tval
+        );
+        if (!$sock) {
+//            return elang('server_status_offline');
+            return false;
+        } else {
+//            return elang('server_status_online');
+            return true;
+            fclose($sock);
+        }
+    }
+
+    public
     static function get_online_players_count($realmID)
     {
         $datas = database::$chars[$realmID]->count('characters', ['online[=]' => 1]);

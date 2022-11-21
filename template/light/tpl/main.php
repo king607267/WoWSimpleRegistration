@@ -228,7 +228,7 @@ require_once 'header.php'; ?>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    <?php elang('close'); ?>"
+                                                    <?php elang('close'); ?>
                                                 </button>
                                             </div>
                                         </div>
@@ -338,7 +338,9 @@ require_once 'header.php'; ?>
                          aria-labelledby="nav-serverstatus-tab">
                         <?php
                         foreach (get_config('realmlists') as $onerealm_key => $onerealm) {
-                            echo "<p><span style='color: #005cbf;font-weight: bold;'>{$onerealm['realmname']}</span> <span style='font-size: 12px;'>(" . lang('online_players_msg1') . " " . user::get_online_players_count($onerealm['realmid']) . ")</span></p><hr>";
+                            $status = user::get_server_status($onerealm['db_host'], get_config('db_realm_port'));
+                            $status_txt = $status ? "[<span style='color: green'>". lang('server_status_online') ."</span>]": "[<span style='color: red'>". lang('server_status_offline') ."</span>]";
+                            echo "<p>$status_txt<span style='color: #005cbf;font-weight: bold;'>{$onerealm['realmname']}</span><span style='font-size: 12px;'>(" . lang('online_players_msg1') . " " . user::get_online_players_count($onerealm['realmid']) . ")</span></p><hr>";
                             $online_chars = user::get_online_players($onerealm['realmid']);
                             if (!is_array($online_chars)) {
                                 echo "<span style='color: #0d99e5;'>" . lang('online_players_msg2') . "</span>";
