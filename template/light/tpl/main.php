@@ -14,15 +14,15 @@ require_once 'header.php'; ?>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" onclick="location.href='<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>'"
                        role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('home'); ?></a>
-                    <a class="nav-item nav-link active" id="nav-register-tab" data-toggle="tab" href="#nav-register"
-                       role="tab" aria-controls="nav-register" aria-selected="true"><?php elang('register'); ?></a>
+                    <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register"
+                       role="tab" aria-controls="nav-register" aria-selected="false"><?php elang('register'); ?></a>
                     <?php if (!get_config('disable_online_players')) { ?>
                         <a class="nav-item nav-link" id="nav-serverstatus-tab" data-toggle="tab"
                            href="#nav-serverstatus" role="tab" aria-controls="nav-serverstatus" aria-selected="false"><?php elang('server_status'); ?></a>
                     <?php }
                     if (!get_config('disable_top_players')) { ?>
-                        <a class="nav-item nav-link" id="nav-topplayers-tab" data-toggle="tab" href="#nav-topplayers"
-                           role="tab" aria-controls="nav-topplayers" aria-selected="false"><?php elang('top_players'); ?></a>
+                        <a class="nav-item nav-link active" id="nav-topplayers-tab" data-toggle="tab" href="#nav-topplayers"
+                           role="tab" aria-controls="nav-topplayers" aria-selected="true"><?php elang('top_players'); ?></a>
                     <?php } ?>
                     <a class="nav-item nav-link" id="nav-howtoconnect-tab" data-toggle="tab"
                        href="#nav-howtoconnect" role="tab" aria-controls="nav-howtoconnect" aria-selected="false"><?php elang('how_to_connect'); ?></a>
@@ -35,7 +35,7 @@ require_once 'header.php'; ?>
                 </div>
             </nav>
             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-register" role="tabpanel"
+                <div class="tab-pane fade" id="nav-register" role="tabpanel"
                      aria-labelledby="nav-register-tab">
                     <div class="row">
                         <div class="col-md-6">
@@ -334,7 +334,7 @@ require_once 'header.php'; ?>
                     </div>
                 </div>
                 <?php if (!get_config('disable_online_players')) { ?>
-                    <div class="tab-pane fade" id="nav-serverstatus" role="tabpanel"
+                    <div class="tab-pane fade show active" id="nav-serverstatus" role="tabpanel"
                          aria-labelledby="nav-serverstatus-tab">
                         <?php
                         foreach (get_config('realmlists') as $onerealm_key => $onerealm) {
