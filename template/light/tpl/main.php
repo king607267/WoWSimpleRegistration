@@ -17,12 +17,12 @@ require_once 'header.php'; ?>
                     <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register"
                        role="tab" aria-controls="nav-register" aria-selected="false"><?php elang('register'); ?></a>
                     <?php if (!get_config('disable_online_players')) { ?>
-                        <a class="nav-item nav-link" id="nav-serverstatus-tab" data-toggle="tab"
-                           href="#nav-serverstatus" role="tab" aria-controls="nav-serverstatus" aria-selected="false"><?php elang('server_status'); ?></a>
+                        <a class="nav-item nav-link active show" id="nav-serverstatus-tab" data-toggle="tab"
+                           href="#nav-serverstatus" role="tab" aria-controls="nav-serverstatus" aria-selected="true"><?php elang('server_status'); ?></a>
                     <?php }
                     if (!get_config('disable_top_players')) { ?>
-                        <a class="nav-item nav-link active" id="nav-topplayers-tab" data-toggle="tab" href="#nav-topplayers"
-                           role="tab" aria-controls="nav-topplayers" aria-selected="true"><?php elang('top_players'); ?></a>
+                        <a class="nav-item nav-link" id="nav-topplayers-tab" data-toggle="tab" href="#nav-topplayers"
+                           role="tab" aria-controls="nav-topplayers" aria-selected="false"><?php elang('top_players'); ?></a>
                     <?php } ?>
                     <a class="nav-item nav-link" id="nav-howtoconnect-tab" data-toggle="tab"
                        href="#nav-howtoconnect" role="tab" aria-controls="nav-howtoconnect" aria-selected="false"><?php elang('how_to_connect'); ?></a>
