@@ -28,6 +28,18 @@ if (version_compare(PHP_VERSION, '7.0', '<')) {
     echo "<p><a href='https://www.liquidweb.com/kb/installing-additional-php-versions-using-easyapache-4/' target='_blank'>CPanel EasyApache4 install PHP 7</a></p>";
     exit();
 }
+require_once './application/config/config_common.php';
+
+function get_config($name)
+{
+    global $config;
+    if (!empty($name)) {
+        if (isset($config[$name])) {
+            return $config[$name];
+        }
+    }
+    return false;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,12 +52,12 @@ if (version_compare(PHP_VERSION, '7.0', '<')) {
     <meta name="description" content="WJMWoW">
     <title>WJMWoW</title>
     <link rel="stylesheet"
-          href="./css/bootstrap.min.css">
+          href="<?php echo get_config("baseurl"); ?>/template/<?php echo get_config("template"); ?>/css/bootstrap.min.css">
     <link rel="stylesheet"
-          href="./css/style.css">
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/popper.min.js"></script>
+          href="<?php echo get_config("baseurl"); ?>/template/<?php echo get_config("template"); ?>/css/style.css">
+    <script src="<?php echo get_config("baseurl"); ?>/template/<?php echo get_config("template"); ?>/js/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo get_config("baseurl"); ?>/template/<?php echo get_config("template"); ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo get_config("baseurl"); ?>/template/<?php echo get_config("template"); ?>/js/popper.min.js"></script>
 </head>
 <body>
 <div class="container">
