@@ -5,6 +5,5 @@
  * @link    https://masterking32.com
  * @Description : It's not masterking32 framework !
  **/
-require_once "./check.php";
 require_once './application/config/config_wotlk.php';
 require_once "./handler.php";
