@@ -12,13 +12,13 @@ require_once 'header.php'; ?>
         <div class="col-xs-12" style="margin-top: 20px;">
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" onclick="location.href='<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>'"
-                       role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('home'); ?></a>
+                    <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="modal" onclick="location.href='<?php echo $antiXss->xss_clean(get_config("baseurl")); ?>'"
+                       role="tab" aria-controls="nav-contact" aria-selected="true"><?php elang('home'); ?></a>
                     <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register"
                        role="tab" aria-controls="nav-register" aria-selected="false"><?php elang('register'); ?></a>
                     <?php if (!get_config('disable_online_players')) { ?>
-                        <a class="nav-item nav-link active show" id="nav-serverstatus-tab" data-toggle="tab"
-                           href="#nav-serverstatus" role="tab" aria-controls="nav-serverstatus" aria-selected="true"><?php elang('server_status'); ?></a>
+                        <a class="nav-item nav-link" id="nav-serverstatus-tab" data-toggle="tab"
+                           href="#nav-serverstatus" role="tab" aria-controls="nav-serverstatus" aria-selected="false"><?php elang('server_status'); ?></a>
                     <?php }
                     if (!get_config('disable_top_players')) { ?>
                         <a class="nav-item nav-link" id="nav-topplayers-tab" data-toggle="tab" href="#nav-topplayers"
@@ -35,7 +35,7 @@ require_once 'header.php'; ?>
                 </div>
             </nav>
             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                <div class="tab-pane fade" id="nav-register" role="tabpanel"
+                <div class="tab-pane fade show active" id="nav-register" role="tabpanel"
                      aria-labelledby="nav-register-tab">
                     <div class="row">
                         <div class="col-md-6">
@@ -334,9 +334,26 @@ require_once 'header.php'; ?>
                     </div>
                 </div>
                 <?php if (!get_config('disable_online_players')) { ?>
-                    <div class="tab-pane fade show active" id="nav-serverstatus" role="tabpanel"
+                    <div class="tab-pane fade" id="nav-serverstatus" role="tabpanel"
                          aria-labelledby="nav-serverstatus-tab">
-                        <?php include("refresh.php") ?>
+                        <?php
+                        foreach (get_config('realmlists') as $onerealm_key => $onerealm) {
+                            $status = user::get_server_status($onerealm['db_host'], get_config('realm_port'));
+                            $status_txt = $status ? "[<span style='color: green'>". lang('server_status_online') ."</span>]": "[<span style='color: red'>". lang('server_status_offline') ."</span>]";
+                            echo "<p>$status_txt <span style='color: #005cbf;font-weight: bold;'>{$onerealm['realmname']}</span> <span style='font-size: 12px;'>(" . lang('online_players_msg1') . " " . user::get_online_players_count($onerealm['realmid']) . ")</span></p><hr>";
+                            $online_chars = user::get_online_players($onerealm['realmid']);
+                            if (!is_array($online_chars)) {
+                                echo "<span style='color: #0d99e5;'>" . lang('online_players_msg2') . "</span>";
+                            } else {
+                                echo '<table class="table table-striped"><thead><tr><th scope="col">' . lang('name') . '</th><th scope="col">' . lang('race') . '</th> <th scope="col">' . lang('class') . '</th><th scope="col">' . lang('level') . '</th></tr></thead><tbody>';
+                                foreach ($online_chars as $one_char) {
+                                    echo '<tr><th scope="row">' . $antiXss->xss_clean($one_char['name']) . '</th><td><img src=\'' . get_config("baseurl") . '/template/' . $antiXss->xss_clean(get_config("template")) . '/images/race/' . $antiXss->xss_clean($one_char["race"]) . '-' . $antiXss->xss_clean($one_char["gender"]) . '.gif\'></td><td><img src=\'' . get_config("baseurl") . '/template/' . $antiXss->xss_clean(get_config("template")) . '/images/class/' . $antiXss->xss_clean($one_char["class"]) . '.gif\'></td><td>' . $antiXss->xss_clean($one_char['level']) . '</td></tr>';
+                                }
+                                echo '</table>';
+                            }
+                            echo "<hr>";
+                        }
+                        ?>
                     </div>
                 <?php }
                 if (!get_config('disable_top_players')) { ?>
