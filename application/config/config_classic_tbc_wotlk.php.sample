@@ -23,17 +23,6 @@ $config['realmlist'] = 'logon.myserver.com';
 $config['patch_location'] = 'http://mypatch.com/patch.mpq';
 $config['game_version'] = '3.3.5a (12340)';
 /*===================================================================
-Core Type:
-0 = TrinityCore
-1 = AzerothCore
-2 = AshamaneCore
-3 = Skyfire Project
-4 = OregonCore
-5 = CMangos
-10 = etc
-=====================================================================*/
-$config['server_core'] = 0;
-/*===================================================================
 soap_for_register
     Don't Enable it for AzerothCore/TrinityCore/SkyFire and AshamaneCore.
     If you enable that you need to disabled change password feature.
@@ -154,3 +143,16 @@ $config['realmlists'] = array( // Add your realmlist here
     )
 );
 */
+/*===================================================================
+Select your server expansion.
+If you want to use advance template, Your images and backgrounds will be changed for your expansion.
+0 = Classic
+1 = The Burning Crusade (TBC)
+2 = Wrath of the Lich King (WotLK)
+3 = Cataclysm
+4 = Mist of Pandaria (MOP)
+5 = Warlords of Draenor (WOD)
+6 = Legion
+7 = BFA (I'm not sure about this one!)
+=====================================================================*/
+$config['expansion'] = '2';
