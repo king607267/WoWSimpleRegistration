@@ -338,9 +338,9 @@ require_once 'header.php'; ?>
                          aria-labelledby="nav-serverstatus-tab">
                         <?php
                         foreach (get_config('realmlists') as $onerealm_key => $onerealm) {
-                            $status = user::get_server_status($onerealm['db_host'], get_config('realm_port'));
-                            $status_txt = $status ? "[<span style='color: green'>". lang('server_status_online') ."</span>]": "[<span style='color: red'>". lang('server_status_offline') ."</span>]";
-                            echo "<p>$status_txt <span style='color: #005cbf;font-weight: bold;'>{$onerealm['realmname']}</span> <span style='font-size: 12px;'>(" . lang('online_players_msg1') . " " . user::get_online_players_count($onerealm['realmid']) . ")</span></p><hr>";
+                            $count_html = " - " . lang('count_account') . user::get_account_count() . " - " . lang('count_characters') . user::get_characters_count($onerealm['realmid']);
+                            $status_html = user::get_server_status($onerealm['db_host'], get_config('realm_port')) ? "[<span style='color: green'>" . lang('server_status_online') . "</span>]" : "[<span style='color: red'>" . lang('server_status_offline') . "</span>]";
+                            echo "<p>$status_html <span style='color: #005cbf;font-weight: bold;'>{$onerealm['realmname']}</span> <span style='font-size: 13px;'>(" . lang('online_players_msg1') . " " . user::get_online_players_count($onerealm['realmid']) . $count_html. ")</span></p><hr>";
                             $online_chars = user::get_online_players($onerealm['realmid']);
                             if (!is_array($online_chars)) {
                                 echo "<span style='color: #0d99e5;'>" . lang('online_players_msg2') . "</span>";

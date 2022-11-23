@@ -645,6 +645,26 @@ class user
     }
 
     public
+    static function get_characters_count($realmID)
+    {
+        $datas = database::$chars[$realmID]->count('characters');
+        if (!empty($datas)) {
+            return $datas;
+        }
+        return 0;
+    }
+
+    public
+    static function get_account_count()
+    {
+        $datas = database::$auth->count('account');
+        if (!empty($datas)) {
+            return $datas;
+        }
+        return 0;
+    }
+
+    public
     static function get_server_status($host, $port)
     {
         $errno = 0;
